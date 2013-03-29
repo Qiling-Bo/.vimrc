@@ -1,11 +1,11 @@
 "auto reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
-"color
+" Color scheme
+" mkdir -p ~/.vim/colors && cd ~/.vim/colors
+" wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 set t_Co=256
 color wombat256mod
-"color zenburn
-"colorscheme desert
 
 "Make Y behave like other capitals
 map Y y$
@@ -66,7 +66,14 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+" Python mode
+" cd ~/.vim/bundle
+" git clone https://github.com/klen/python-mode
+
+
 "power line
+" cd ~/.vim/bundle
+" git clone git://github.com/Lokaltog/vim-powerline.git
 set laststatus=2
 "set guifont=PowerlineSymbols\ for\ Powerline
 set nocompatible
