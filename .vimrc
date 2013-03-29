@@ -1,12 +1,6 @@
 " auto reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
-" Color scheme
-" mkdir -p ~/.vim/colors && cd ~/.vim/colors
-" wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
-set t_Co=256
-color wombat256mod
-
 " Make Y behave like other capitals
 map Y y$
 
@@ -93,6 +87,13 @@ Bundle 'The-NERD-tree'
 autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Color scheme
+" mkdir -p ~/.vim/colors && cd ~/.vim/colors
+" wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
+Bundle 'wombat256.vim'
+set t_Co=256
+color wombat256mod
 
 filetype plugin indent on
 syntax on
