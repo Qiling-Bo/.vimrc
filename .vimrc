@@ -1,4 +1,4 @@
-"auto reload .vimrc
+" auto reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
 " Color scheme
@@ -7,24 +7,18 @@ autocmd! bufwritepost .vimrc source %
 set t_Co=256
 color wombat256mod
 
-"Make Y behave like other capitals
+" Make Y behave like other capitals
 map Y y$
 
-"highlight current line
+" highlight current line
 "set cursorline 
 
-"fold, use z+a to fold and unfold
+" fold, use z+a to fold and unfold
 set foldmethod=indent
 set foldlevel=99
 
 "line number
 set number
-
-" Enable syntax highlighting
-" You need to reload this file for the change to apply
-filetype off
-filetype plugin indent on
-syntax on
 
 " bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
@@ -33,11 +27,11 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
-"improve movement on wrapped lines
+" improve movement on wrapped lines
 nnoremap j gj
 nnoremap k gk
 
-"highlight search
+" highlight search
 set hlsearch
 
 "tab and indent
@@ -53,37 +47,55 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-"move easier to move the block
+" move easier to move the block
 vnoremap < <gv
 vnoremap > >gv
+
+" Mode toggle
+map <F3> :set nospell <CR>
+map <F2> :set spell spelllang=en_us<CR>
+
+" Set scroll
+:set scroll=10
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
+filetype off
 
-"auto load plugs
+" Vundle
+" cd ~/.vim/bundle/vundle
+" git clone http://github.com/gmarik/vundle.git
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" pathogen
+" auto load plugs
 execute pathogen#infect()
-syntax on
-filetype plugin indent on
 
 " Python mode
 " cd ~/.vim/bundle
 " git clone https://github.com/klen/python-mode
+Bundle 'Python-mode-klen'
 
-
-"power line
+" power line
 " cd ~/.vim/bundle
 " git clone git://github.com/Lokaltog/vim-powerline.git
+"Bundle 'vim-powerline'
 set laststatus=2
 "set guifont=PowerlineSymbols\ for\ Powerline
-set nocompatible
-set t_Co=256
 let g:Powerline_symbols = 'fancy'
 
-"Nerd tree start and stop
+" Nerd tree start and stop
+Bundle 'The-NERD-tree'
 autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+filetype plugin indent on
+syntax on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For Python Settings
@@ -105,10 +117,3 @@ highlight ColorColumn ctermbg=233
 ""spell check
 "set spell spelllang=en_us
 
-" Mode toggle
-"
-map <F3> :set nospell <CR>
-map <F2> :set spell spelllang=en_us<CR>
-
-" Set scroll
-:set scroll=10
