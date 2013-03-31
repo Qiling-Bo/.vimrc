@@ -25,8 +25,13 @@ map <c-h> <c-w>h
 nnoremap j gj
 nnoremap k gk
 
-" highlight search
-set hlsearch
+" highlight search and toggle
+map <F2> :set hlsearch! <CR>
+set hlsearch 
+
+" Mode toggle
+map <F3> :set nospell! <CR>
+"map <F3> :set spell spelllang=en_us<CR>
 
 "tab and indent
 set tabstop=4
@@ -44,10 +49,6 @@ set noswapfile
 " move easier to move the block
 vnoremap < <gv
 vnoremap > >gv
-
-" Mode toggle
-map <F3> :set nospell <CR>
-map <F2> :set spell spelllang=en_us<CR>
 
 " Set scroll
 :set scroll=10
@@ -94,6 +95,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 Bundle 'wombat256.vim'
 set t_Co=256
 color wombat256mod
+
+" UltiSnips
+Bundle 'UltiSnips'
 
 filetype plugin indent on
 syntax on
