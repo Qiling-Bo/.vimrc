@@ -4,6 +4,9 @@ autocmd! bufwritepost .vimrc source %
 " Make Y behave like other capitals
 map Y y$
 
+" map jk to ESC
+inoremap jk <Esc>
+
 " highlight current line
 "set cursorline 
 
@@ -52,6 +55,11 @@ vnoremap > >gv
 
 " Set scroll
 :set scroll=10
+
+" Beautify display of hidden characters (tabs and line breaks)
+" (`:set list!` to toggle)
+set listchars=tab:▸\ ,eol:¬
+map <F4> :set list! <CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
