@@ -5,7 +5,7 @@ autocmd! bufwritepost .vimrc source %
 map Y y$
 
 " map jk to ESC
-inoremap jk <Esc>
+"inoremap jk <Esc>
 
 " highlight current line
 "set cursorline 
@@ -58,7 +58,7 @@ vnoremap > >gv
 
 " Beautify display of hidden characters (tabs and line breaks)
 " (`:set list!` to toggle)
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:>-,trail:_,eol:^
 map <F4> :set list! <CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
