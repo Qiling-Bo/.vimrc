@@ -74,9 +74,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" pathogen
-" auto load plugs
-execute pathogen#infect()
+"" pathogen
+"" auto load plugs
+"execute pathogen#infect()
 
 " Python mode
 " cd ~/.vim/bundle
@@ -86,7 +86,7 @@ Bundle 'Python-mode-klen'
 " power line
 " cd ~/.vim/bundle
 " git clone git://github.com/Lokaltog/vim-powerline.git
-"Bundle 'vim-powerline'
+Bundle 'Lokaltog/vim-powerline'
 set laststatus=2
 "set guifont=PowerlineSymbols\ for\ Powerline
 let g:Powerline_symbols = 'fancy'
