@@ -61,6 +61,15 @@ vnoremap > >gv
 set listchars=tab:>-,trail:_,eol:^
 map <F4> :set list! <CR>
 
+" Set Font
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_win32")
+    set guifont=Consolas:h10:cANSI
+  endif
+endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
