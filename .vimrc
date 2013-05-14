@@ -116,6 +116,12 @@ color wombat256mod
 " UltiSnips
 Bundle 'UltiSnips'
 
+" Syntastic
+Bundle 'Syntastic'
+
+" JEDI
+Bundle 'davidhalter/jedi-vim'
+
 filetype plugin indent on
 syntax on
 
