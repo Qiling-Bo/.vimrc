@@ -133,7 +133,15 @@ set tw=79
 set nowrap " don't automatically wrap on load
 set fo-=t " don't automatically wrap text when typing
 set colorcolumn=80
-highlight ColorColumn ctermbg=233
+if has("gui_running")
+  if has("gui_gtk2")
+    highlight ColorColumn guibg=Black
+  elseif has("gui_win32")
+    highlight ColorColumn guibg=Black
+  endif
+else
+    highlight ColorColumn ctermbg=233
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For Latex Settings
