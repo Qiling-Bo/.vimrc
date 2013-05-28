@@ -91,6 +91,7 @@ Bundle 'gmarik/vundle'
 " cd ~/.vim/bundle
 " git clone https://github.com/klen/python-mode
 Bundle 'Python-mode-klen'
+let g:pymode_lint_ignore = "E501"
 
 " power line
 " cd ~/.vim/bundle
@@ -120,7 +121,7 @@ Bundle 'UltiSnips'
 Bundle 'Syntastic'
 
 " JEDI
-Bundle 'davidhalter/jedi-vim'
+"Bundle 'davidhalter/jedi-vim'
 
 filetype plugin indent on
 syntax on
