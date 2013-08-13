@@ -139,6 +139,7 @@ if has("gui_running")
     highlight ColorColumn guibg=Black
   elseif has("gui_win32")
     highlight ColorColumn guibg=Black
+    au GUIEnter * simalt ~x     "maximun the windows 
   endif
 else
     highlight ColorColumn ctermbg=233
