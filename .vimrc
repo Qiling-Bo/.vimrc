@@ -64,7 +64,7 @@ map <F4> :set list! <CR>
 " Set Font
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Inconsolata\ 12
+    set guifont=Inconsolata\ 10
   elseif has("gui_win32")
     set guifont=Consolas:h10:cANSI
   endif
@@ -91,7 +91,7 @@ Bundle 'gmarik/vundle'
 " cd ~/.vim/bundle
 " git clone https://github.com/klen/python-mode
 Bundle 'Python-mode-klen'
-let g:pymode_lint_ignore = "E501"
+let g:pymode_syntax = 1
 
 " power line
 " cd ~/.vim/bundle
@@ -99,7 +99,7 @@ let g:pymode_lint_ignore = "E501"
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2
 "set guifont=PowerlineSymbols\ for\ Powerline
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols='fancy'
 
 " Nerd tree start and stop
 Bundle 'The-NERD-tree'
@@ -110,8 +110,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Color scheme
 " mkdir -p ~/.vim/colors && cd ~/.vim/colors
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
-Bundle 'wombat256.vim'
 set t_Co=256
+Bundle 'wombat256.vim'
 color wombat256mod
 
 " UltiSnips
