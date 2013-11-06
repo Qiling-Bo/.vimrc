@@ -64,7 +64,7 @@ map <F4> :set list! <CR>
 " Set Font
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Inconsolata\ 10
+    set guifont=Inconsolata\ 11
   elseif has("gui_win32")
     set guifont=Consolas:h10:cANSI
   endif
@@ -83,15 +83,15 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-"" pathogen
-"" auto load plugs
+" pathogen
+" auto load plugs
 "execute pathogen#infect()
 
 " Python mode
 " cd ~/.vim/bundle
 " git clone https://github.com/klen/python-mode
-Bundle 'Python-mode-klen'
-let g:pymode_syntax = 1
+"Bundle 'Python-mode-klen'
+"let g:pymode_syntax = 1
 
 " power line
 " cd ~/.vim/bundle
@@ -99,7 +99,7 @@ let g:pymode_syntax = 1
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2
 "set guifont=PowerlineSymbols\ for\ Powerline
-let g:Powerline_symbols='fancy'
+"let g:Powerline_symbols='fancy'
 
 " Nerd tree start and stop
 Bundle 'The-NERD-tree'
@@ -118,10 +118,11 @@ color wombat256mod
 Bundle 'UltiSnips'
 
 " Syntastic
-Bundle 'Syntastic'
+Bundle 'scrooloose/syntastic'
 
 " JEDI
-"Bundle 'davidhalter/jedi-vim'
+Bundle 'davidhalter/jedi-vim'
+let g:jedi#completions_command = "<C-N>"
 
 filetype plugin indent on
 syntax on
