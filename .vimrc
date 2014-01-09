@@ -1,3 +1,6 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " auto reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
@@ -17,7 +20,8 @@ set foldlevel=99
 "line number
 set number
 
-" bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
+" bind Ctrl+<movement> keys to move around the windows, 
+" instead of using Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
 map <c-j> <c-w>j
 map <c-k> <c-w>k
@@ -70,9 +74,9 @@ if has("gui_running")
   endif
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 filetype off
 
@@ -134,8 +138,9 @@ Bundle 'mattn/gist-vim'
 filetype plugin indent on
 syntax on
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For Python Settings
-" ===================
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "wrap text
 set tw=79
 set nowrap " don't automatically wrap on load
@@ -145,8 +150,10 @@ set fo-=t " don't automatically wrap text when typing
 set colorcolumn=80
 if has("gui_running")
   if has("gui_gtk2")
+    " linux
     highlight ColorColumn guibg=Black
   elseif has("gui_win32")
+    " windows
     highlight ColorColumn guibg=Black
     au GUIEnter * simalt ~x     "maximun the windows 
   endif
@@ -157,11 +164,11 @@ endif
 " remove whitespace
 autocmd BufWritePre *.py :%s/\s\+$//e
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For Latex Settings
-" ==================
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""compatible with Word or Openoffice
 "set tw=0 wrap linebreak
 "
 ""spell check
 "set spell spelllang=en_us
-
