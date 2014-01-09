@@ -113,6 +113,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 set t_Co=256
 Bundle 'wombat256.vim'
 color wombat256mod
+"Bundle 'github-theme'
+"color github
 
 " UltiSnips
 Bundle 'UltiSnips'
@@ -124,16 +126,22 @@ Bundle 'scrooloose/syntastic'
 Bundle 'davidhalter/jedi-vim'
 let g:jedi#completions_command = "<C-N>"
 
+" Gist
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+
+
 filetype plugin indent on
 syntax on
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For Python Settings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ===================
 "wrap text
 set tw=79
 set nowrap " don't automatically wrap on load
 set fo-=t " don't automatically wrap text when typing
+
+"80 character column
 set colorcolumn=80
 if has("gui_running")
   if has("gui_gtk2")
@@ -146,10 +154,11 @@ else
     highlight ColorColumn ctermbg=233
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" For Latex Settings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" remove whitespace
+autocmd BufWritePre *.py :%s/\s\+$//e
 
+" For Latex Settings
+" ==================
 ""compatible with Word or Openoffice
 "set tw=0 wrap linebreak
 "
