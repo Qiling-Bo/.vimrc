@@ -1,6 +1,3 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " auto reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
@@ -20,8 +17,7 @@ set foldlevel=99
 "line number
 set number
 
-" bind Ctrl+<movement> keys to move around the windows, 
-" instead of using Ctrl+w + <movement>
+" bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
 map <c-j> <c-w>j
 map <c-k> <c-w>k
@@ -112,13 +108,10 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Color scheme
-" mkdir -p ~/.vim/colors && cd ~/.vim/colors
-" wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 set t_Co=256
-Bundle 'wombat256.vim'
+"Bundle 'wombat256.vim'
+Bundle 'flazz/vim-colorschemes'
 color wombat256mod
-"Bundle 'github-theme'
-"color github
 
 " UltiSnips
 Bundle 'UltiSnips'
@@ -134,26 +127,26 @@ let g:jedi#completions_command = "<C-N>"
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
+" Surround
+Bundle 'tpope/vim-surround'
+
 
 filetype plugin indent on
 syntax on
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " For Python Settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ===================
 "wrap text
 set tw=79
 set nowrap " don't automatically wrap on load
 set fo-=t " don't automatically wrap text when typing
 
-"80 character column
+" 80 character column
 set colorcolumn=80
 if has("gui_running")
   if has("gui_gtk2")
-    " linux
     highlight ColorColumn guibg=Black
   elseif has("gui_win32")
-    " windows
     highlight ColorColumn guibg=Black
     au GUIEnter * simalt ~x     "maximun the windows 
   endif
@@ -164,9 +157,18 @@ endif
 " remove whitespace
 autocmd BufWritePre *.py :%s/\s\+$//e
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" debugger keyboard shortcuts 
+map <F5> :Dbg over<CR> 
+map <F6> :Dbg into<CR> 
+map <F7> :Dbg out<CR> 
+map <F8> :Dbg here<CR> 
+map <F9> :Dbg break<CR> 
+map <F10> :Dbg watch<CR> 
+map <F11> :Dbg down<CR> 
+map <F12> :Dbg up<CR> 
+
 " For Latex Settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ==================
 ""compatible with Word or Openoffice
 "set tw=0 wrap linebreak
 "
