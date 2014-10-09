@@ -79,9 +79,11 @@ filetype off
 " Vundle
 " cd ~/.vim/bundle/vundle
 " git clone http://github.com/gmarik/vundle.git
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
+"Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " pathogen
 " auto load plugs
@@ -96,13 +98,13 @@ Bundle 'gmarik/vundle'
 " power line
 " cd ~/.vim/bundle
 " git clone git://github.com/Lokaltog/vim-powerline.git
-Bundle 'Lokaltog/vim-powerline'
+Plugin 'Lokaltog/vim-powerline'
 set laststatus=2
 "set guifont=PowerlineSymbols\ for\ Powerline
 "let g:Powerline_symbols='fancy'
 
 " Nerd tree start and stop
-Bundle 'The-NERD-tree'
+Plugin 'The-NERD-tree'
 autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -110,28 +112,29 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Color scheme
 set t_Co=256
 "Bundle 'wombat256.vim'
-Bundle 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
 color wombat256mod
 
 " UltiSnips
-Bundle 'UltiSnips'
+Plugin 'UltiSnips'
 
 " Syntastic
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " JEDI
-Bundle 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 let g:jedi#completions_command = "<C-N>"
 
 " Gist
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 
 " Surround
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-filetype plugin indent on
 syntax on
 
 " For Python Settings
