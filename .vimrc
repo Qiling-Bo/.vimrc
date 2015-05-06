@@ -132,6 +132,9 @@ Plugin 'mattn/gist-vim'
 " Surround
 Plugin 'tpope/vim-surround'
 
+" smooth scroll
+Plugin 'yonchu/accelerated-smooth-scroll'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
