@@ -3,6 +3,16 @@
 “-marching.vim 
 ”-snowdrop.vim 
 “-quickrun.vim
+"-snipmate.vim
+"-autoproto.vim
+"-buffdiff.vim
+"-logedit.vim
+"-matchit.vim
+"-supertab.vim
+"-surround.vim
+"-taglist.vim
+"-zencoding.vim
+"-slime.vim
 
 " auto reload .vimrc
 autocmd! bufwritepost .vimrc source %
