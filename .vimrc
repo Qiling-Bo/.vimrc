@@ -1,3 +1,9 @@
+“-neocomplete.vim 
+”-neosnippet.vim 
+“-marching.vim 
+”-snowdrop.vim 
+“-quickrun.vim
+
 " auto reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
